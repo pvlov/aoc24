@@ -3,15 +3,20 @@ use std::collections::HashMap;
 const INPUT: &str = include_str!("../../inputs/01.txt");
 
 fn parse_input(input: &str) -> (Vec<u32>, Vec<u32>) {
-    let (mut left, mut right): (Vec<_>, Vec<_>) = input
-        .lines()
-        .map(|line| line.split_whitespace())
-        .map(|mut split| (split.next().unwrap(), split.next().unwrap()))
-        .map(|(l, r)| (l.parse::<u32>().unwrap(), r.parse::<u32>().unwrap()))
-        .unzip();
+    let mut left = Vec::new();
+    let mut right = Vec::new();
 
-    left.sort();
-    right.sort();
+    for line in input.lines() {
+        let mut split = line.split_whitespace();
+        let l = split.next().unwrap().parse::<u32>().unwrap();
+        let r = split.next().unwrap().parse::<u32>().unwrap();
+
+        left.push(l);
+        right.push(r);
+    }
+
+    left.sort_unstable();
+    right.sort_unstable();
 
     (left, right)
 }
@@ -21,7 +26,7 @@ fn solve1(input: &str) {
 
     let sum = left
         .iter()
-        .zip(right.iter())
+        .zip(&right)
         .map(|(l, r)| (l.abs_diff(*r)))
         .sum::<u32>();
 
@@ -34,11 +39,7 @@ fn solve2(input: &str) {
     let mut occurences = HashMap::new();
 
     for value in right {
-        if let Some(count) = occurences.get(&value) {
-            occurences.insert(value, count + 1);
-        } else {
-            occurences.insert(value, 1);
-        }
+        *occurences.entry(value).or_insert(0) += 1;
     }
 
     let sum = left
