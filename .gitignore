@@ -1,3 +1,5 @@
 /inputs
 .DS_Store
 **/target
+.ruby-lsp
+

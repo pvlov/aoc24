@@ -6,6 +6,7 @@ I will probably not be able to finish each days task on time, but I will try to 
 | Day | Programming Language |
 | --- | -------------------- |
 | 1   | Rust                 |
+| 2   | Ruby                 |
 
 The randomizer will pick a language from the following list:
 
@@ -18,7 +19,6 @@ The randomizer will pick a language from the following list:
 - Elixir
 - OCaml
 - Haskell
-- Ruby
 - Swift
 - Go
 - TypeScript
