@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-const INPUT: &str = include_str!("../../inputs/01.txt");
+const INPUT: &str = include_str!("../01.txt");
 
 fn parse_input(input: &str) -> (Vec<u32>, Vec<u32>) {
     let mut left = Vec::new();

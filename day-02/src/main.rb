@@ -36,7 +36,7 @@ end
 def main
   reports = []
 
-  File.foreach('../../inputs/02.txt') do |line|
+  File.foreach('../02.txt') do |line|
     reports << line.split.map(&:to_i)
   end
 
