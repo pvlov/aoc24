@@ -8,6 +8,7 @@ I will probably not be able to finish each days task on time, but I will try to 
 | 1   | Rust                 |
 | 2   | Ruby                 |
 | 3   | PHP                  |
+| 4   | Fortran              |
 
 The randomizer will pick a language from the following list:
 
@@ -27,7 +28,6 @@ The randomizer will pick a language from the following list:
 - Gleam
 - Julia
 - Zig
-- Fortran
 - Perl
 - Ada
 - Erlang

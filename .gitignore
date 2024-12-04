@@ -3,4 +3,5 @@
 **/target
 .ruby-lsp
 *.txt
-
+**/main
+**/*.mod
